@@ -1,0 +1,229 @@
+/* ===== Base ===== */
+:root {
+  --color-bg: #fdfaf7;
+  --color-bg-alt: #f3ece5;
+  --color-text: #2b2420;
+  --color-muted: #5e534c;
+  --color-accent: #8a3b4a;
+  --color-accent-dark: #6b2c39;
+  --color-white: #ffffff;
+  --radius: 10px;
+  --max-width: 1000px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ===== Accessibility helpers ===== */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-bg-alt);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.nav-list a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: var(--color-bg-alt);
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  color: var(--color-accent);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-muted);
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+/* ===== Services ===== */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-card {
+  padding: 1.25rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-bg-alt);
+  border-radius: var(--radius);
+}
+
+.service-card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* ===== Opening hours ===== */
+.hours-table {
+  border-collapse: collapse;
+  min-width: 280px;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 0.5rem 1.5rem 0.5rem 0;
+  text-align: left;
+  border-bottom: 1px solid #d9cfc6;
+}
+
+.hours-table th {
+  font-weight: 600;
+}
+
+/* ===== Contact ===== */
+.contact-info {
+  font-style: normal;
+}
+
+.contact-info p {
+  margin: 0 0 0.5rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--color-white);
+  background: var(--color-text);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* "Powered by SeeYouThen" badge (logo is blue on white, so it sits on a white chip) */
+.site-footer .powered-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.powered-by img {
+  background: var(--color-white);
+  border-radius: 50%;
+}
